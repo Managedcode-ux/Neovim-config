@@ -6,4 +6,3 @@ vim.cmd("set relativenumber")
 vim.opt.clipboard = 'unnamed'
 vim.g.mapleader = " "
 
-

@@ -1,44 +1,59 @@
 return {
 
-    {
-        "williamboman/mason.nvim",
-        lazy = false,
-        config = function()
-            local mason = require("mason").setup()
-        end,
-    },
-    {
-        "williamboman/mason-lspconfig.nvim",
-        lazy = false,
-        opts = {
-            auto_install = true,
-            ensure_installed = { "lua_ls", "ts_ls" },
-        },
-    },
-    {
-        "neovim/nvim-lspconfig",
-        lazy = false,
-        config = function()
-            local capabilities = require("cmp_nvim_lsp").default_capabilities()
+	{
+		"williamboman/mason.nvim",
+		lazy = false,
+		config = function()
+			local mason = require("mason").setup()
+		end,
+	},
+	{
+		"williamboman/mason-lspconfig.nvim",
+		lazy = false,
+		opts = {
+			auto_install = true,
+			ensure_installed = { "lua_ls", "ts_ls" },
+		},
+	},
+	{
+		"neovim/nvim-lspconfig",
+		lazy = false,
+		config = function()
+			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-            local lspconfig = require("lspconfig")
-            lspconfig.ts_ls.setup({
-                capabilities = capabilities,
-            })
-            lspconfig.solargraph.setup({
-                capabilities = capabilities,
-            })
-            lspconfig.html.setup({
-                capabilities = capabilities,
-            })
-            lspconfig.lua_ls.setup({
-                capabilities = capabilities,
-            })
+			local lspconfig = require("lspconfig")
+			lspconfig.ts_ls.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.solargraph.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.html.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.lua_ls.setup({
+				capabilities = capabilities,
+			})
 
-            vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
-            vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
-            vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
-            vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
-        end,
-    },
+			lspconfig.cmake.setup({
+                cmd = { "cmake-language-server" },
+                filetypes = {"cmake","CMakeLists.txt"},
+                capabilities = capabilities
+			})
+
+			--cpp setting
+			lspconfig.clangd.setup({
+				cmd = { "clangd", "--background-index", "--clang-tidy", "--log=verbose" },
+				init_options = {
+					fallback_flags = { "-std=c++17" },
+				},
+				capabilities = capabilities,
+			})
+
+			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
+			vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
+			vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
+			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
+		end,
+	},
 }
