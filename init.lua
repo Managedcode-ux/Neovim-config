@@ -27,4 +27,4 @@ require("vim-settings")
 -- Setup lazy.nvim
 require("lazy").setup("plugins")
 require("neovide").setup()
-require("keymap").setup()
+require("keymap").setup() 
