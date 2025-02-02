@@ -3,7 +3,7 @@ local M = {}
 function M.setup()
 	if vim.g.neovide then
 		-- font configurations
-		vim.o.guifont = "JetBrainsMono Nerd Font Mono:h12"
+		vim.o.guifont = "JetBrainsMono Nerd Font Mono:h10"
 
 		--line space
 		vim.opt.linespace = 1
