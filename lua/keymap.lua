@@ -9,7 +9,8 @@ M.setup = function()
 	--[[ CUSTOM KEYMAPS ]]
 	-- Command mode paste from register
 	vim.keymap.set("c", "<C-v>", '<C-r>"', { noremap = true, desc = "Paste from register in command mode" })
-
+	vim.keymap.set({ "n", "v", "i" }, "<C-s>", "<cmd>w<CR><Esc>", { desc = "Save file" })
+	vim.keymap.set("n", ";", ":", { desc = "Enter command mode" })
 	-----------------------------------------------------------------------------------------------------------------------------------------------
 
 	--[[ LSP RELATED KEYMAPS ]]
@@ -33,7 +34,7 @@ M.setup = function()
 	vim.keymap.set("n", "<leader>ff", telescope.find_files, { desc = "Find files" })
 	vim.keymap.set("n", "<leader>fg", telescope.live_grep, { desc = "Live grep" })
 	vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<CR>", { desc = "Find buffers" })
-    vim.keymap.set("n", "<leader>ch", "<cmd>Telescope keymaps<CR>", { desc = "Show all the keymappings"})
+	vim.keymap.set("n", "<leader>ch", "<cmd>Telescope keymaps<CR>", { desc = "Show all the keymappings" })
 
 	--code navigation
 	vim.keymap.set("n", "<leader>s", "<cmd>Telescope lsp_document_symbols<CR>") -- Document symbols

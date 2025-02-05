@@ -5,3 +5,5 @@ vim.cmd("set shiftwidth=4")
 vim.opt.number = true
 vim.opt.clipboard = "unnamedplus"
 
+vim.opt.shell = "pwsh"
+vim.opt.shellcmdflag = "-NoLogo -Command"
