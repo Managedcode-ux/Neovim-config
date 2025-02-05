@@ -6,10 +6,10 @@ return {
 
 		null_ls.setup({
 			sources = {
+                null_ls.builtins.diagnostics.stylelint,
 				null_ls.builtins.formatting.stylua, --stylua is the formatter for lua
 				null_ls.builtins.completion.spell,
 				null_ls.builtins.formatting.prettierd,
-				null_ls.builtins.diagnostics.htmlhint,
 				--require("none-ls.diagnostics.eslint"), -- requires none-ls-extras.nvim
 			},
 		})
