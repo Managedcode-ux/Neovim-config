@@ -9,7 +9,7 @@ vim.opt.hlsearch = true    -- Enable search highlighting
 vim.opt.incsearch = true   -- Enable incremental search
 vim.opt.ignorecase = true  -- Ignore case in search patterns
 vim.opt.smartcase = true   -- Override ignorecase if search contains uppercase
-
+vim.opt.wrap = false
 
 vim.opt.termguicolors = true  -- Enable true color support
 vim.opt.shell = "pwsh"
