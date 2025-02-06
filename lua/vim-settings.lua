@@ -11,5 +11,6 @@ vim.opt.ignorecase = true  -- Ignore case in search patterns
 vim.opt.smartcase = true   -- Override ignorecase if search contains uppercase
 
 
+vim.opt.termguicolors = true  -- Enable true color support
 vim.opt.shell = "pwsh"
 vim.opt.shellcmdflag = "-NoLogo -Command"
