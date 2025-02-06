@@ -1,12 +1,25 @@
 return {
 	-- Although names none "ls" this is not a language server but plugin for mananing linting and formatting
 	"nvimtools/none-ls.nvim",
+	dependencies = {
+		"WhoIsSethDaniel/mason-tool-installer",
+	},
 	config = function()
 		local null_ls = require("null-ls")
-
+		require("mason-tool-installer").setup({
+			ensure_installed = {
+				"prettier", -- for formatting JavaScript, etc.
+				"eslint_d", -- for linting JavaScript/TypeScript
+				"stylua", -- for formatting Lua
+				"black", -- for formatting Python
+				"isort", -- for sorting Python imports
+			},
+			auto_update = false,
+			run_on_start = true,
+		})
 		null_ls.setup({
 			sources = {
-                null_ls.builtins.diagnostics.stylelint,
+				null_ls.builtins.diagnostics.stylelint,
 				null_ls.builtins.formatting.stylua, --stylua is the formatter for lua
 				null_ls.builtins.completion.spell,
 				null_ls.builtins.formatting.prettierd,
