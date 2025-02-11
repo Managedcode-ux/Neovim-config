@@ -11,7 +11,7 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "biome","lua_ls", "ts_ls", "html","cssls","ruff"},
+				ensure_installed = { "biome", "lua_ls", "ts_ls", "html", "cssls","pylsp" },
 			})
 		end,
 	},
