@@ -92,6 +92,16 @@ M.setup = function()
 	vim.keymap.set("n", "<S-Tab>", ":tabprevious<CR>", { desc = "Go to previous tab" })
 
 	-----------------------------------------------------------------------------------------------------------------------------------------------
+	-- Session Management
+	vim.keymap.set("n", "<leader>ss", ":SessionSave<CR>", { desc = "Sessions Save", noremap = true, silent = true })
+	vim.keymap.set("n", "<leader>ls", ":Autosession search<cr>", { desc = "Available Sessions", noremap = true, silent = true })
+	vim.keymap.set("n", "<leader>sd", ":Autosession delete<cr>", { desc = "Delete Sessions", noremap = true, silent = true })
+	vim.keymap.set("n", "<leader>sr", ":SessionRestore ", { desc = "Restore Sessions", noremap = true, silent = true })
+	vim.keymap.set("n", "<leader>sa", ":SessionToggleAutoSave<CR>",{ desc = "Toggle Autosave Sessions", noremap = true, silent = true })
+	vim.keymap.set("n", "<leader>sD", ":SessionDisableAutoSave<CR>",{ desc = "Disable Autosave Sessions", noremap = true, silent = true })
+	vim.keymap.set("n", "<leader>sp", ":SessionPurgeOrphaned<CR>",{ desc = "Purge Orphaned Sessions", noremap = true, silent = true })
+
+	-----------------------------------------------------------------------------------------------------------------------------------------------
 	--[[ Keymap Reference ]]
 	--[[currently Not working will need to reimplement or correct the refrence.lua file]]
 	--
