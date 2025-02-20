@@ -13,7 +13,7 @@ return {
 				filesystem = {
                     hijack_netrw_behavior = "disabled",
 					filtered_items = {
-						hide_gitignore = false,
+						hide_gitignored = false,
 						hide_hidden = false,
 						hide_dotfiles = false,
 					},
