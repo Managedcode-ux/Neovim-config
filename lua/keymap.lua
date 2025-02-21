@@ -101,6 +101,28 @@ M.setup = function()
 	vim.keymap.set("n", "<leader>sD", ":SessionDisableAutoSave<CR>",{ desc = "Disable Autosave Sessions", noremap = true, silent = true })
 	vim.keymap.set("n", "<leader>sp", ":SessionPurgeOrphaned<CR>",{ desc = "Purge Orphaned Sessions", noremap = true, silent = true })
 
+    -----------------------------------------------------------------------------------------------------------------------------------------------
+	-- Terminal Management
+
+    -- 1. Open terminal in new tab with default shell
+    vim.keymap.set('n', '<leader>tt', ':tabnew | terminal<CR>', {
+        noremap = true,
+        silent = true,
+        desc = 'Open terminal in new tab'
+    })
+
+    
+
+    -- 2. Exit terminal insert mode easily
+    -- This maps Escape to switch to normal mode in terminal
+    -- The double escape is more ergonomic than the default <C-\><C-n>
+    vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', {
+        noremap = true,
+        silent = true,
+        desc = 'Exit terminal insert mode'
+    })
+
+
 	-----------------------------------------------------------------------------------------------------------------------------------------------
 	--[[ Keymap Reference ]]
 	--[[currently Not working will need to reimplement or correct the refrence.lua file]]
