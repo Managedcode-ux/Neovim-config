@@ -16,6 +16,7 @@ vim.opt.termguicolors = true -- Enable true color support
 vim.opt.shell = "pwsh"
 vim.opt.shellcmdflag = "-NoLogo -Command"
 vim.o.undofile = true
+vim.g.undotree_DiffCommand = "FC"
 -- :Config opens the neovim config directory
 vim.api.nvim_create_user_command("Config", function()
 	local config_dir = vim.fn.stdpath("config")
