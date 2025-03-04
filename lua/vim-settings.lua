@@ -1,3 +1,4 @@
+--vim.cmd.colorscheme("gruvbox-material")
 vim.cmd("set expandtab")
 vim.cmd("set tabstop=4")
 vim.cmd("set softtabstop=4")
@@ -14,7 +15,7 @@ vim.opt.wrap = false
 vim.opt.termguicolors = true -- Enable true color support
 vim.opt.shell = "pwsh"
 vim.opt.shellcmdflag = "-NoLogo -Command"
-
+vim.o.undofile = true
 -- :Config opens the neovim config directory
 vim.api.nvim_create_user_command("Config", function()
 	local config_dir = vim.fn.stdpath("config")
